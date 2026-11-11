@@ -259,7 +259,7 @@ footer{border-top:1px solid var(--hair);padding-block:22px 30px;color:var(--mute
   .top-in{grid-template-columns:1fr auto;min-height:64px}
   .nav{grid-column:1/-1;grid-row:2;overflow-x:auto}
   .nav a{padding-block:12px 14px}
-  .top-btns .btn.second{display:none}
+  .top-btns .btn{padding:8px 14px;font-size:14px}
 }
 @media (max-width:900px){
   .tiles,.studio,.request{grid-template-columns:minmax(0,1fr)}
@@ -337,8 +337,7 @@ footer{border-top:1px solid var(--hair);padding-block:22px 30px;color:var(--mute
       <a href="#house" data-tab="house">Дома</a>
     </nav>
     <div class="top-btns">
-      <button class="btn" type="button" data-go="config">Рассчитать цену</button>
-      <button class="btn second" type="button" data-go="request">Записаться на замер</button>
+      <button class="btn" type="button" data-go="request">Записаться на замер</button>
     </div>
   </div>
 </header>

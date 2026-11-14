@@ -79,8 +79,9 @@ button,input,textarea{font:inherit;color:inherit}
 /* как у Reform: две плитки во весь экран, кадр крупный — кухня у духовки и вытяжки, дом — торец с окнами в пол */
 .tile img.ill.kit{object-position:0% 55%;transform:none}
 .tile.photo:hover img.ill.kit{transform:scale(1.03)}
-.tile img.ill.house{object-position:94% 60%;transform:none}
-.tile.photo:hover img.ill.house{transform:scale(1.03)}
+/* дом в тот же рост, что кухня: конёк на уровне верха фартука, цоколь на линии пола кухни */
+.tile img.ill.house{object-position:94% 50%;transform:scale(1.284);transform-origin:84% 44.66%}
+.tile.photo:hover img.ill.house{transform:scale(1.284)}
 .tile.photo .btn{background:#fff;border-color:#fff;color:var(--ink)}
 .tile.photo:hover .btn{background:var(--ink);border-color:var(--ink);color:#fff}
 .tile-sub{margin:6px 0 0;font-size:15px;color:var(--ink);opacity:.8}

@@ -29,7 +29,7 @@
 /* Layout: quiet Scandinavian showroom — white ground, hairlines, outlined buttons, full-bleed muted colour tiles; configurator = big 3D stage left, options right */
 :root{
   --bg:#FFFFFF; --ink:#141414; --muted:#6F6E6A; --hair:#E4E3DF; --tile:#CBC9C4; --tile2:#EEEDE9;
-  /* кнопки без рамок, цвета страницы: в покое вдавлены в страницу, при наведении мягко приподнимаются, выбранные — выпуклые, в момент нажатия снова вдавливаются */
+  /* кнопки без рамок, цвета страницы: в покое плоские, при наведении мягко приподнимаются, выбранные — выпуклые, в момент нажатия снова вдавливаются */
   --btn:#FFFFFF; --deboss:inset 1px 1px 3px rgba(60,52,40,.17), inset -1px -1px 2px rgba(255,255,255,.95);
   --hover:0 1px 1px rgba(60,52,40,.05), 1px 3px 8px rgba(60,52,40,.13), inset 0 1px 0 #fff;
   --emboss:0 1px 1px rgba(60,52,40,.07), 2px 5px 12px rgba(60,52,40,.19), inset 0 1px 0 #fff;
@@ -51,15 +51,13 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 h1,h2,h3{text-wrap:balance;margin:0;font-weight:400}
 button,input,textarea{font:inherit;color:inherit}
 :focus-visible{outline:1px solid var(--ink);outline-offset:3px}
-.btn{display:inline-block;appearance:none;border:0;background:var(--btn);color:var(--ink);padding:11px 23px;font-size:15px;line-height:1.3;cursor:pointer;text-decoration:none;border-radius:3px;white-space:nowrap;box-shadow:var(--deboss);transition:box-shadow .18s ease,transform .18s ease}
+.btn{display:inline-block;appearance:none;border:0;background:var(--btn);color:var(--ink);padding:11px 23px;font-size:15px;line-height:1.3;cursor:pointer;text-decoration:none;border-radius:3px;white-space:nowrap;box-shadow:none;transition:box-shadow .18s ease,transform .18s ease}
 .btn:hover{box-shadow:var(--hover);transform:translateY(-1px)}
 .btn.on,.btn[aria-pressed="true"]{box-shadow:var(--emboss);transform:translateY(-1px);font-weight:500}
 .btn:active,.btn.on:active{box-shadow:var(--press);transform:none}
 .btn:focus-visible,.opt input:focus-visible + span{outline:2px solid var(--ink);outline-offset:2px}
 /* главное действие — тёмная кнопка: так же приподнимается и вдавливается */
 .btn.primary{background:var(--ink);color:var(--bg)}
-/* тёмная главная кнопка в покое тоже чуть вдавлена */
-.btn.primary{box-shadow:inset 1px 1px 3px rgba(0,0,0,.5)}
 .btn.primary:hover{background:#26241F;box-shadow:0 1px 1px rgba(20,18,14,.1), 2px 5px 12px rgba(20,18,14,.3)}
 .btn.primary:active{background:#0C0B09;box-shadow:inset 2px 3px 6px rgba(0,0,0,.55), inset -1px -1px 3px rgba(255,255,255,.12)}
 .btn.sm{padding:6px 14px;font-size:13px}
@@ -176,7 +174,7 @@ legend.flabel{float:left;width:100%;margin:0}
 .seg{display:flex;flex-wrap:wrap;gap:8px}
 .opt{position:relative;cursor:pointer}
 .opt input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
-.opt span{display:block;padding:8px 14px;border:0;border-radius:3px;font-size:14px;background:var(--btn);box-shadow:var(--deboss);transition:box-shadow .18s ease,transform .18s ease}
+.opt span{display:block;padding:8px 14px;border:0;border-radius:3px;font-size:14px;background:var(--btn);box-shadow:none;transition:box-shadow .18s ease,transform .18s ease}
 .opt:hover span{box-shadow:var(--hover);transform:translateY(-1px)}
 .opt:active span{box-shadow:var(--press);transform:none}
 .opt:hover span{border-color:var(--ink)}
@@ -185,8 +183,9 @@ legend.flabel{float:left;width:100%;margin:0}
 .swatches{display:flex;flex-wrap:wrap;gap:16px}
 .swt{position:relative;display:grid;gap:7px;justify-items:center;cursor:pointer;font-size:12px;color:var(--muted);width:64px;text-align:center}
 .swt input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
-/* образец цвета: в покое вдавлен, при наведении приподнимается, выбранный — выпуклый */
-.chip{width:42px;height:42px;border:0;border-radius:3px;box-shadow:inset 1px 1px 3px rgba(40,34,26,.28),inset -1px -1px 2px rgba(255,255,255,.35);transition:box-shadow .18s ease,transform .18s ease}
+/* образец цвета: при наведении приподнимается, выбранный — выпуклый */
+/* образец: в покое плоский, тонкий край виден только у светлых цветов */
+.chip{width:42px;height:42px;border:0;border-radius:3px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);transition:box-shadow .18s ease,transform .18s ease}
 .swt:hover .chip{box-shadow:0 1px 1px rgba(60,52,40,.06),1px 3px 8px rgba(60,52,40,.16);transform:translateY(-1px)}
 .swt input:checked ~ .chip{box-shadow:0 1px 1px rgba(60,52,40,.08),2px 6px 13px rgba(60,52,40,.26);transform:translateY(-2px)}
 .swt input:checked ~ .swl{color:var(--ink)}

@@ -61,6 +61,8 @@ button,input,textarea{font:inherit;color:inherit}
 .nav a.on::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:var(--ink)}
 .nav a.owner{color:var(--muted)}
 .top-btns{justify-self:end;display:flex;gap:16px}
+.top-btns .btn{border-color:transparent;background:transparent;padding-right:0;padding-left:0}
+.top-btns .btn:hover{background:transparent;color:var(--ink);text-decoration:underline;text-underline-offset:4px}
 
 /* intro + tiles */
 .statement{padding-block:clamp(48px,7vw,96px)}
@@ -277,7 +279,7 @@ footer{border-top:1px solid var(--hair);padding-block:22px 30px;color:var(--mute
   .top-in{grid-template-columns:1fr auto;min-height:64px;padding-top:12px}
   .nav{grid-column:1/-1;grid-row:2;overflow-x:auto}
   .nav a{padding-block:12px 14px}
-  .top-btns .btn{padding:8px 14px;font-size:14px}
+  .top-btns .btn{padding:8px 0;font-size:14px}
 }
 @media (max-width:900px){
   .tiles,.studio,.request{grid-template-columns:minmax(0,1fr)}

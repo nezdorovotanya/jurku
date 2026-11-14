@@ -29,7 +29,7 @@
 /* Layout: quiet Scandinavian showroom — white ground, hairlines, outlined buttons, full-bleed muted colour tiles; configurator = big 3D stage left, options right */
 :root{
   --bg:#FFFFFF; --ink:#141414; --muted:#6F6E6A; --hair:#E4E3DF; --tile:#CBC9C4; --tile2:#EEEDE9;
-  /* кнопки без рамок, цвета страницы: в покое плоские, при наведении мягко приподнимаются, выбранные — выпуклые, в момент нажатия снова вдавливаются */
+  /* кнопки без рамок, цвета страницы: в покое плоские, при наведении мягко приподнимаются, выбранные и нажатые — вдавлены в страницу */
   --btn:#FFFFFF; --deboss:inset 1px 1px 3px rgba(60,52,40,.17), inset -1px -1px 2px rgba(255,255,255,.95);
   --hover:0 1px 1px rgba(60,52,40,.05), 1px 3px 8px rgba(60,52,40,.13), inset 0 1px 0 #fff;
   --emboss:0 1px 1px rgba(60,52,40,.07), 2px 5px 12px rgba(60,52,40,.19), inset 0 1px 0 #fff;
@@ -53,8 +53,8 @@ button,input,textarea{font:inherit;color:inherit}
 :focus-visible{outline:1px solid var(--ink);outline-offset:3px}
 .btn{display:inline-block;appearance:none;border:0;background:var(--btn);color:var(--ink);padding:11px 23px;font-size:15px;line-height:1.3;cursor:pointer;text-decoration:none;border-radius:3px;white-space:nowrap;box-shadow:none;transition:box-shadow .18s ease,transform .18s ease}
 .btn:hover{box-shadow:var(--hover);transform:translateY(-1px)}
-.btn.on,.btn[aria-pressed="true"]{box-shadow:var(--emboss);transform:translateY(-1px);font-weight:500}
-.btn:active,.btn.on:active{box-shadow:var(--press);transform:none}
+.btn.on,.btn[aria-pressed="true"],.btn.on:hover,.btn:active{box-shadow:var(--press);transform:none}
+.btn.on,.btn[aria-pressed="true"]{font-weight:500}
 .btn:focus-visible,.opt input:focus-visible + span{outline:2px solid var(--ink);outline-offset:2px}
 /* главное действие — тёмная кнопка: так же приподнимается и вдавливается */
 .btn.primary{background:var(--ink);color:var(--bg)}
@@ -178,16 +178,16 @@ legend.flabel{float:left;width:100%;margin:0}
 .opt:hover span{box-shadow:var(--hover);transform:translateY(-1px)}
 .opt:active span{box-shadow:var(--press);transform:none}
 .opt:hover span{border-color:var(--ink)}
-.opt input:checked + span,.opt:hover input:checked + span{box-shadow:var(--emboss);transform:translateY(-1px);color:var(--ink);font-weight:500}
+.opt input:checked + span,.opt:hover input:checked + span{box-shadow:var(--press);transform:none;color:var(--ink);font-weight:500}
 .opt input:focus-visible + span{outline:1px solid var(--ink);outline-offset:3px}
 .swatches{display:flex;flex-wrap:wrap;gap:16px}
 .swt{position:relative;display:grid;gap:7px;justify-items:center;cursor:pointer;font-size:12px;color:var(--muted);width:64px;text-align:center}
 .swt input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
-/* образец цвета: при наведении приподнимается, выбранный — выпуклый */
+/* образец цвета: при наведении приподнимается, выбранный — вдавлен */
 /* образец: в покое плоский, тонкий край виден только у светлых цветов */
 .chip{width:42px;height:42px;border:0;border-radius:3px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);transition:box-shadow .18s ease,transform .18s ease}
 .swt:hover .chip{box-shadow:0 1px 1px rgba(60,52,40,.06),1px 3px 8px rgba(60,52,40,.16);transform:translateY(-1px)}
-.swt input:checked ~ .chip{box-shadow:0 1px 1px rgba(60,52,40,.08),2px 6px 13px rgba(60,52,40,.26);transform:translateY(-2px)}
+.swt input:checked ~ .chip,.swt:hover input:checked ~ .chip{box-shadow:inset 2px 2px 6px rgba(30,24,16,.45),inset -2px -2px 4px rgba(255,255,255,.3);transform:none}
 .swt input:checked ~ .swl{color:var(--ink)}
 .swt input:focus-visible ~ .chip{outline:2px solid var(--ink);outline-offset:3px}
 input[type=range]{width:100%;accent-color:var(--ink);margin:0}

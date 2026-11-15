@@ -119,6 +119,9 @@ body.home .nav a[data-tab="kitchen"],body.home .nav a[data-tab="house"]{display:
 /* дом в тот же рост, что кухня: конёк на уровне верха фартука, цоколь на линии пола кухни */
 .tile img.ill.house{object-position:94% 50%;transform:scale(1.284);transform-origin:84% 44.66%}
 .tile.photo:hover img.ill.house{transform:scale(1.284)}
+.tile.wide.photo{aspect-ratio:auto;width:auto}
+.tile img.ill.ply{object-position:50% 50%;transform:none}
+.tile.photo:hover img.ill.ply{transform:scale(1.03)}
 .tile-sub{margin:6px 0 0;font-size:15px;color:var(--ink);opacity:.8}
 
 /* configurator */
@@ -319,7 +322,7 @@ footer{border-top:1px solid var(--hair);padding-block:22px 30px;color:var(--mute
 }
 @media (max-width:900px){
   .tiles,.studio,.request{grid-template-columns:minmax(0,1fr)}
-  .tile,.tile.wide{height:auto;min-height:0;aspect-ratio:1/1}
+  .tile,.tile.wide,.tile.wide.photo{height:auto;min-height:0;aspect-ratio:1/1}
   /* телефон и планшет: вид прилипает под шапкой, настройки прокручиваются под ним, цена — после настроек */
   .stage{display:contents}
   .stage .view{position:sticky;top:var(--topH,0px);z-index:6;order:1;aspect-ratio:auto!important;height:min(44vh,74vw);max-height:none;min-height:200px;box-shadow:0 1px 0 var(--hair)}
@@ -405,7 +408,6 @@ footer{border-top:1px solid var(--hair);padding-block:22px 30px;color:var(--mute
     <nav class="nav" aria-label="Разделы">
       <a href="#kitchen" data-tab="kitchen">Кухни</a>
       <a href="#house" data-tab="house">Дома</a>
-      <a href="#materials" data-tab="materials" class="mat-link">Материалы</a>
     </nav>
     <div class="top-btns">
       <button class="btn" type="button" data-go="request">Записаться на замер</button>
@@ -423,6 +425,10 @@ footer{border-top:1px solid var(--hair);padding-block:22px 30px;color:var(--mute
     <button class="tile photo" type="button" data-open="house" style="background:#AEC3D7">
       <img class="ill house" alt="Одноэтажный каркасный дом с двускатной кровлей, обшитый деревом, с окнами в пол, зимой в снегу" src="assets/tile-house-c3406b7ce1.jpg">
       <div class="tile-h"><div><h2>Одноэтажные дома</h2></div></div>
+    </button>
+    <button class="tile photo wide" type="button" data-open="materials" style="background:#DEDDDA">
+      <img class="ill ply" alt="Срез берёзовой фанеры крупным планом: слои шпона и светлая берёзовая поверхность" src="assets/tile-ply-c64b81b80b.jpg">
+      <div class="tile-h"><div><h2>Материалы</h2></div></div>
     </button>
   </section>
 

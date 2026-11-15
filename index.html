@@ -272,7 +272,7 @@ body.tv-open{overflow:hidden}
 .bar-s{font-size:12px;color:var(--muted);margin-top:6px;font-variant-numeric:tabular-nums}
 
 /* steps */
-.steps{padding-block:clamp(64px,8vw,110px) 10px;display:grid;gap:26px}
+.steps{padding-block:clamp(64px,8vw,110px) 56px;display:grid;gap:26px}
 .steps h2,.request h2{font-size:clamp(24px,2.4vw,34px)}
 .steps ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid var(--hair)}
 .steps li{display:grid;gap:6px;align-content:start;padding:18px 18px 18px 0;min-width:0}
@@ -281,7 +281,7 @@ body.tv-open{overflow:hidden}
 .steps p{margin:0;font-size:13px;color:var(--muted)}
 
 /* request */
-.request{padding-block:clamp(64px,8vw,110px) 56px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,4vw,56px);align-items:start}
+.request{padding-block:clamp(64px,8vw,110px) 10px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,4vw,56px);align-items:start}
 .intro-r{display:grid;gap:16px}
 .intro-r p{margin:0;color:var(--muted);max-width:52ch}
 .contacts{display:grid;gap:4px;font-size:15px}
@@ -487,17 +487,6 @@ footer{border-top:1px solid var(--hair);padding-block:22px 30px;color:var(--mute
     </div>
   </section>
 
-  <section class="steps pad">
-    <h2>Как идёт работа</h2>
-    <ol>
-      <li><span class="n">1</span><b>Расчёт</b><p>Собираете проект здесь и присылаете нам заявку.</p></li>
-      <li><span class="n">2</span><b>Замер</b><p>Уточняем размеры, технику и трубы. Для дома смотрим участок.</p></li>
-      <li><span class="n">3</span><b>Договор</b><p>Фиксируем цену и сроки. Работаем по полной предоплате.</p></li>
-      <li><span class="n">4</span><b>Производство</b><p>Раскрой, шлифовка и покрытие в мастерской. Присылаем фото по ходу.</p></li>
-      <li><span class="n">5</span><b>Монтаж</b><p>Собираем и регулируем на месте, подписываем акт приёмки.</p></li>
-    </ol>
-  </section>
-
   <section class="request pad" id="request" data-page="tool">
     <div class="intro-r">
       <h2>Заявка на замер</h2>
@@ -519,6 +508,17 @@ footer{border-top:1px solid var(--hair);padding-block:22px 30px;color:var(--mute
         <p class="out-note" id="copyMsg"></p>
       </div>
     </form>
+  </section>
+
+  <section class="steps pad">
+    <h2>Как идёт работа</h2>
+    <ol>
+      <li><span class="n">1</span><b>Расчёт</b><p>Собираете проект здесь и присылаете нам заявку.</p></li>
+      <li><span class="n">2</span><b>Замер</b><p>Уточняем размеры, технику и трубы. Для дома смотрим участок.</p></li>
+      <li><span class="n">3</span><b>Договор</b><p>Фиксируем цену и сроки. Работаем по полной предоплате.</p></li>
+      <li><span class="n">4</span><b>Производство</b><p>Раскрой, шлифовка и покрытие в мастерской. Присылаем фото по ходу.</p></li>
+      <li><span class="n">5</span><b>Монтаж</b><p>Собираем и регулируем на месте, подписываем акт приёмки.</p></li>
+    </ol>
   </section>
 </main>
 

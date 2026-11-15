@@ -106,7 +106,7 @@ button,input,textarea{font:inherit;color:inherit}
 .mat-end{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;padding-top:8px}
 @media (max-width:820px){.mat-h{grid-template-columns:1fr;align-items:start}.mat-row{grid-template-columns:1fr;gap:20px}.mat-row.flip figure{order:0}.mat-f div{grid-template-columns:1fr 1fr}}
 
-body.home .nav a[data-tab="kitchen"],body.home .nav a[data-tab="house"]{display:none}
+body.home .nav a[data-tab="kitchen"],body.home .nav a[data-tab="house"],body.home .nav a[data-tab="materials"]{display:none}
 .tile{position:relative;display:block;aspect-ratio:auto;height:calc(100svh - var(--topH,80px));min-height:460px;max-height:1080px;overflow:hidden;border:0;padding:0;cursor:pointer;text-align:left;color:var(--ink);font:inherit}
 .tile-h{position:absolute;inset:34px var(--gutR) auto var(--gut);display:flex;justify-content:space-between;align-items:flex-start;gap:16px;z-index:2}
 .tile-h h2{font-size:clamp(22px,2.1vw,32px);line-height:1.15}
@@ -408,6 +408,7 @@ footer{border-top:1px solid var(--hair);padding-block:22px 30px;color:var(--mute
     <nav class="nav" aria-label="Разделы">
       <a href="#kitchen" data-tab="kitchen">Кухни</a>
       <a href="#house" data-tab="house">Дома</a>
+      <a href="#materials" data-tab="materials" class="mat-link">Материалы</a>
     </nav>
     <div class="top-btns">
       <button class="btn" type="button" data-go="request">Записаться на замер</button>

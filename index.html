@@ -32,10 +32,9 @@
   /* кнопки как «стеклянные» таблетки: светлая дорожка, выбранный пункт — серая капсула с белым ободком, тонкой линией по краю, мягкой тенью и лёгким цветным бликом сверху */
   --btn:#F3F3F2; --r1:999px;
   --track:0 0 0 1px rgba(0,0,0,.035), inset 0 1px 0 rgba(255,255,255,.9), 0 10px 24px -12px rgba(0,0,0,.22);
-  --pill-bg:linear-gradient(180deg,#E7E7E6 0%,#DADAD9 100%);
-  --pill:0 0 0 1px rgba(0,0,0,.09), inset 0 0 0 1.5px rgba(255,255,255,.95), inset 0 0 0 3px rgba(0,0,0,.035), inset 0 -5px 9px rgba(255,255,255,.55), inset 0 3px 6px rgba(0,0,0,.05), 0 7px 14px -7px rgba(0,0,0,.28);
-  --glow:rgba(205,180,235,.55);
-  --sage:#D3DAC4; --sky:#AEC3D7; --clay:#B8583F; --oak:#D2B387; --birch:#E3CDA7; --edge:#BE9663; --warn:#A3361F;
+  --pill-bg:#E2E2E1;
+  --pill:none;
+    --sage:#D3DAC4; --sky:#AEC3D7; --clay:#B8583F; --oak:#D2B387; --birch:#E3CDA7; --edge:#BE9663; --warn:#A3361F;
   --f:"Inter","Helvetica Neue",Arial,sans-serif;
   --gut:max(clamp(16px,2.4vw,34px),env(safe-area-inset-left,0px));
   --gutR:max(clamp(16px,2.4vw,34px),env(safe-area-inset-right,0px));
@@ -52,15 +51,15 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 h1,h2,h3{text-wrap:balance;margin:0;font-weight:400}
 button,input,textarea{font:inherit;color:inherit}
 :focus-visible{outline:1px solid var(--ink);outline-offset:3px}
-.btn{display:inline-block;appearance:none;border:0;background:var(--btn);color:var(--ink);padding:11px 24px;font-size:15px;line-height:1.3;cursor:pointer;text-decoration:none;border-radius:999px;white-space:nowrap;box-shadow:var(--track);transition:box-shadow .2s ease,background .2s ease}
+.btn{display:inline-block;appearance:none;border:0;background:var(--btn);color:var(--ink);padding:11px 24px;font-size:15px;line-height:1.3;cursor:pointer;text-decoration:none;border-radius:999px;white-space:nowrap;transition:background .2s ease}
 .btn:hover{background:#EDEDEC}
-.btn.on,.btn[aria-pressed="true"],.btn:active{background:radial-gradient(70% 45% at 50% 0%,var(--glow),transparent 72%),var(--pill-bg);box-shadow:var(--pill)}
+.btn.on,.btn[aria-pressed="true"],.btn:active{background:var(--pill-bg)}
 .btn.on,.btn[aria-pressed="true"]{font-weight:500}
 .btn:focus-visible,.opt input:focus-visible + span{outline:2px solid var(--ink);outline-offset:3px}
 /* главное действие — тёмная капсула с тонким светлым ободком */
-.btn.primary{background:linear-gradient(180deg,#2A2926,#141414);color:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.6), inset 0 0 0 1.5px rgba(255,255,255,.14), inset 0 1px 0 rgba(255,255,255,.18), 0 10px 22px -10px rgba(0,0,0,.55)}
-.btn.primary:hover{background:linear-gradient(180deg,#34332F,#1C1B19)}
-.btn.primary:active{background:#0C0B09;box-shadow:0 0 0 1px rgba(0,0,0,.6), inset 0 3px 8px rgba(0,0,0,.6)}
+.btn.primary{background:#1B1A18;color:#fff}
+.btn.primary:hover{background:#2E2D2A}
+.btn.primary:active{background:#0C0B09}
 .btn.sm{padding:7px 16px;font-size:13px}
 
 /* header */
@@ -198,17 +197,15 @@ legend.flabel{float:left;width:100%;margin:0}
 .opt input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
 .opt span{display:block;padding:9px 18px;border-radius:999px;font-size:14px;color:#3A3936;transition:background .2s ease,box-shadow .2s ease,color .2s ease}
 .opt:hover span{color:var(--ink);background:rgba(0,0,0,.035)}
-.opt input:checked + span,.opt:hover input:checked + span{color:var(--ink);background:radial-gradient(70% 45% at 50% 0%,var(--glow),transparent 72%),var(--pill-bg);box-shadow:var(--pill)}
-/* блик у выбранной капсулы чуть разного цвета, как на образце */
-.opt:nth-child(4n+2){--glow:rgba(240,185,200,.55)}.opt:nth-child(4n+3){--glow:rgba(180,225,190,.55)}.opt:nth-child(4n){--glow:rgba(180,205,240,.55)}
+.opt input:checked + span,.opt:hover input:checked + span{color:var(--ink);background:var(--pill-bg)}
 .opt input:focus-visible + span{outline:2px solid var(--ink);outline-offset:3px}
 .swatches{display:flex;flex-wrap:wrap;gap:16px}
 .swt{position:relative;display:grid;gap:7px;justify-items:center;cursor:pointer;font-size:12px;color:var(--muted);width:64px;text-align:center}
 .swt input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
-/* образец: аккуратный квадрат; выбранный — в белом ободке с тонкой линией и мягкой тенью, как капсула */
+/* образец: аккуратный квадрат; выбранный — в белом ободке с тонкой линией, без тени */
 .chip{width:42px;height:42px;border:0;border-radius:10px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);transition:box-shadow .2s ease}
-.swt:hover .chip{box-shadow:inset 0 0 0 1px rgba(0,0,0,.08),0 8px 16px -8px rgba(0,0,0,.3)}
-.swt input:checked ~ .chip,.swt:hover input:checked ~ .chip{box-shadow:inset 0 0 0 1px rgba(0,0,0,.1),inset 0 3px 6px rgba(255,255,255,.25),0 0 0 3.5px #fff,0 0 0 4.5px rgba(0,0,0,.12),0 9px 16px -8px rgba(0,0,0,.35)}
+.swt:hover .chip{box-shadow:inset 0 0 0 1px rgba(0,0,0,.16)}
+.swt input:checked ~ .chip,.swt:hover input:checked ~ .chip{box-shadow:inset 0 0 0 1px rgba(0,0,0,.1),0 0 0 3px #fff,0 0 0 4px rgba(0,0,0,.28)}
 .swt input:checked ~ .swl{color:var(--ink)}
 .swt input:focus-visible ~ .chip{outline:2px solid var(--ink);outline-offset:3px}
 input[type=range]{width:100%;accent-color:var(--ink);margin:0}

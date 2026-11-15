@@ -164,7 +164,7 @@ body.home .nav a[data-tab="kitchen"],body.home .nav a[data-tab="house"],body.hom
 .view-hint{position:absolute;left:20px;bottom:14px;font-size:12px;color:var(--muted);z-index:3;max-width:40%;line-height:1.3}
 .legend{position:absolute;right:20px;bottom:12px;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:4px 14px;font-size:12px;color:var(--muted);z-index:3;max-width:56%}
 .legend span{display:inline-flex;align-items:center;gap:6px}
-.sw{display:inline-block;width:11px;height:11px;border:1px solid rgba(0,0,0,.25)}
+.sw{display:inline-block;width:11px;height:11px;border:1px solid rgba(0,0,0,.25);border-radius:50%}
 .price{padding-top:24px;display:grid;gap:14px}
 .price-top{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
 .total-l{font-size:13px;color:var(--muted)}
@@ -210,8 +210,8 @@ legend.flabel{float:left;width:100%;margin:0}
 .swatches{display:flex;flex-wrap:wrap;gap:16px}
 .swt{position:relative;display:grid;gap:7px;justify-items:center;cursor:pointer;font-size:12px;color:var(--muted);width:64px;text-align:center}
 .swt input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
-/* образец: аккуратный квадрат; выбранный — в белом ободке с тонкой линией, без тени */
-.chip{width:42px;height:42px;border:0;border-radius:10px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);transition:box-shadow .2s ease}
+/* образец: круг; выбранный — в белом ободке с тонкой линией, без тени */
+.chip{width:42px;height:42px;border:0;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);transition:box-shadow .2s ease}
 .swt:hover .chip{box-shadow:inset 0 0 0 1px rgba(0,0,0,.16)}
 .swt input:checked ~ .chip,.swt:hover input:checked ~ .chip{box-shadow:inset 0 0 0 1px rgba(0,0,0,.1),0 0 0 3px #fff,0 0 0 4px rgba(0,0,0,.28)}
 .swt input:checked ~ .swl{color:var(--ink)}

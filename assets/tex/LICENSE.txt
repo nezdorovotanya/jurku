@@ -1,0 +1,5 @@
+Textures in this folder are CC0 (public domain), via github.com/Papyszoo/CC0-Public-Domain-Textures:
+birch  — ambientCG Wood017       spruce — ambientCG Wood049
+floor  — ambientCG Concrete034   plaster — ambientCG Plaster001
+snow   — ambientCG Snow003       roof   — ShareTextures metal roof
+Resized to 512 px and converted to JPEG. Used only for the studio renders in the project brochure.
